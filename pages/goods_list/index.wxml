@@ -1,0 +1,25 @@
+<!-- 搜索-->
+<SearchInput></SearchInput>
+<!-- 监听自定义事件-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <!-- 插槽-->
+  <block>
+    <view class="first_tab">
+      <navigator class="goods_item"
+        wx:for="{{goodsList}}"
+        wx:key="id"
+        url="/pages/goods_detail/index?goods_id={{item.id}}"
+      >
+        <!-- 左侧图片容器-->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="{{item.imageSrc}}"></image>
+        </view>
+        <!-- 右侧商品容器-->
+        <view class="goods_info_wrap">
+          <view class="goods_name">{{item.name}}</view>
+          <view class="goods_price">￥{{item.price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</Tabs>
